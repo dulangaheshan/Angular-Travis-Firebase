@@ -3,9 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  PIXABAY_API_KEY: '9232338-5c1ff106b9384e4f9441311ef',
+  PIXABAY_API_URL: 'https://pixabay.com/api/?key='
 };
-
 /*
  * In development mode, to ignore zone related error stack frames such as
  * `zone.run`, `zoneDelegate.invokeTask` for easier debugging, you can

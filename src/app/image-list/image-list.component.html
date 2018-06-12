@@ -1,0 +1,23 @@
+<mat-card>
+  <mat-form-field>  
+    <input matInput [(ngModel)]="searchQuery" >
+  </mat-form-field>
+  <br>
+  <button (click)="searchImages(searchQuery)" mat-raised-button class="searchButton" type="button">Find Images</button>
+</mat-card>
+
+  <div *ngIf="searching">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>
+
+    <h4 mat-list *ngIf="imagesFound" >Results</h4>
+    <ngx-masonry [useImagesLoaded]="true">
+  <div *ngFor="let image of images" class=image-container >
+    <img src="{{ image.webformatURL }}" alt="">
+    <p>Tags: {{ image.tags }}</p>
+    <p>User: {{ image.user }}</p>
+    <p>Comments: {{ image.comments }}</p>
+    <p>Likes: {{ image.likes }}</p>
+  </div>
+
+ 
